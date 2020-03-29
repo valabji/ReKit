@@ -2,9 +2,9 @@
 > Standard React Native Expo Application
 
 [![Status](https://img.shields.io/badge/build-passing-green.svg?branch=master)](https://github.com/valabji/Delivery)
-[![React Native](https://img.shields.io/badge/React%20Native-v0.57.8-blue.svg?logo=react)](https://facebook.github.io/react-native/)
-[![Expo](https://img.shields.io/badge/Expo-SDK35.0.0-black.svg?logo=expo)](https://expo.io/)
-[![React Navigation V3](https://img.shields.io/badge/React%20Navigation-v3.4.1-blue.svg?logo=react)](https://reactnavigation.org/)
+[![React Native](https://img.shields.io/badge/React%20Native-v36.0.0-blue.svg?logo=react)](https://facebook.github.io/react-native/)
+[![Expo](https://img.shields.io/badge/Expo-SDK36.0.0-black.svg?logo=expo)](https://expo.io/)
+[![React Navigation V5](https://img.shields.io/badge/React%20Navigation-v5.0.0-blue.svg?logo=react)](https://reactnavigation.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellowgreen.svg)](http://mit-license.org/)
 
 

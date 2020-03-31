@@ -25,7 +25,11 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier":"com.valabji.rekit",
       "supportsTablet": true
+    },
+    "android":{
+      "bundleIdentifier":"com.valabji.rekit"
     }
   }
 }

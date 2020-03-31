@@ -25,6 +25,8 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 
 [https://github.com/valabji/ReKit](https://github.com/valabji/ReKit/)
 
+> Inspired by [react-native-expo-kit](https://github.com/AbdeenM/react-native-expo-kit)
+
 ## Contributing
 
 1. Fork it (<https://github.com/valabji/ReKit/fork>)

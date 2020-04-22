@@ -10,13 +10,17 @@
 
 ## Installation
 
-
+use yarn or npm to install packages
 ```sh
-npm install
+// Yarn 
+yarn
+// npm
+npm install --save
+```
+then start your app
+```sh
 expo start
 ```
-
-
 ## Meta
 
 Valabji – [@valabji](https://twitter.com/valabji) – valabji@gmail.com
@@ -34,6 +38,12 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
+
+## ❤️ Special Thanks
+> ❤️ [Abdeen Mohammed](https://github.com/AbdeenM)
+> ❤️ [ShenAizhen](https://github.com/ShenAizhen)
+> ❤️ [react-ui-kit](https://github.com/react-ui-kit)
+
 
 <!-- Markdown link & img dfn's -->
 [npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square

@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { Button, View, Text, TextInput } from 'react-native';
+import { Button, View, Text, TextInput, SafeAreaView } from 'react-native';
 //import { TextInput } from 'react-native-gesture-handler';
 
 var user = "";
 var pass = "";
 export default function Home({ navigation }) {
     return (
-      <View>
+      <SafeAreaView>
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text style={{ fontSize:24, marginBottom:10,marginTop:20}}>ReKit Login</Text>
         <TextInput
@@ -29,7 +29,7 @@ export default function Home({ navigation }) {
                   }
           }} title="Login" />
       </View>
-      </View>      
+      </SafeAreaView>      
     );
   }
   

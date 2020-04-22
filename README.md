@@ -10,17 +10,10 @@
 
 ## Installation
 
-use yarn or npm to install packages
-```sh
-// Yarn 
-yarn
-// npm
-npm install --save
-```
-then start your app
-```sh
-expo start
-```
+- `git clone https://github.com/valabji/ReKit.git`
+- `cd ReKit`
+- `yarn install` or `npm install --save`
+
 ## Meta
 
 Valabji – [@valabji](https://twitter.com/valabji) – valabji@gmail.com

@@ -29,7 +29,7 @@
       "supportsTablet": true
     },
     "android":{
-      "bundleIdentifier":"com.valabji.rekit"
+      "package": "com.valabji.rekit"
     }
   }
 }

@@ -3,7 +3,6 @@
     "name": "Rekit",
     "slug": "ReKit",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
       "android",
@@ -25,10 +24,10 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier":"com.valabji.rekit",
+      "bundleIdentifier": "com.valabji.rekit",
       "supportsTablet": true
     },
-    "android":{
+    "android": {
       "package": "com.valabji.rekit"
     }
   }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Platform, StatusBar, StyleSheet, View, Text } from 'react-native';
-import { SplashScreen } from 'expo';
+import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
@@ -13,6 +13,10 @@ import TabBarIcon from './components/TabBarIcon';
 import Screen3 from './screens/Screen3'
 import useLinking from './navigation/useLinking';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {
+  useFonts,
+  Tajawal_900Black,
+} from '@expo-google-fonts/tajawal';
 
 const Stack = createStackNavigator();
 
@@ -21,11 +25,13 @@ export default function App(props) {
   const [initialNavigationState, setInitialNavigationState] = React.useState();
   const containerRef = React.useRef();
   const { getInitialState } = useLinking(containerRef);
-
+  let [fontsLoaded] = useFonts({
+    Tajawal_900Black,
+  });
   React.useEffect(() => {
     async function loadResourcesAndDataAsync() {
       try {
-        SplashScreen.preventAutoHide();
+        SplashScreen.preventAutoHideAsync();
         setInitialNavigationState(await getInitialState());
         await Font.loadAsync({
           ...Ionicons.font,
@@ -35,13 +41,13 @@ export default function App(props) {
         console.warn(e);
       } finally {
         setLoadingComplete(true);
-        SplashScreen.hide();
+        SplashScreen.hideAsync();
       }
     }
 
     loadResourcesAndDataAsync();
   }, []);
-  if (!isLoadingComplete && !props.skipLoadingScreen) {
+  if (!isLoadingComplete && !fontsLoaded && !props.skipLoadingScreen) {
     return null;
   } else {
     return (

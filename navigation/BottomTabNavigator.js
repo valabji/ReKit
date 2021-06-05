@@ -4,7 +4,9 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import Screen2 from '../screens/Screen2';
 import Screen3 from '../screens/Screen3';
-
+import Colors from "../constants/Colors";
+import { Text, View } from 'react-native';
+import { AntDesign, Feather, FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -13,29 +15,98 @@ export default function BottomTabNavigator({ navigation, route }) {
   navigation.setOptions({ headerTitle: getHeaderTitle(route) });
 
   return (
-    <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
+    <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}
+      tabBarOptions={{
+        activeBackgroundColor: Colors.DGreen,
+        inactiveBackgroundColor: Colors.DGreen,
+        tabStyle: {
+          paddingTop: 10,
+          // marginTop:10,
+        },
+        style: {
+          // borderTopWidth: 0,
+          height: 100
+
+        }
+      }}
+    >
       <BottomTab.Screen
-        name="Home"
+        name="Main"
         component={HomeScreen}
         options={{
-          title: 'Home',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-home" />,
+          tabBarLabel: ({ focused }) => { return <View /> },
+          tabBarIcon: ({ focused }) => {
+            return <View style={{ width: 80, alignItems: "center" }}>
+              <TabBarIcon focused={focused} name="sync" />
+              <Text style={{ fontFamily: "Cairo_400Regular", color: focused ? Colors.BGreen : Colors.tabIconDefault }}>المحول</Text>
+            </View>
+          },
         }}
       />
       <BottomTab.Screen
         name="Sc2"
         component={Screen2}
         options={{
-          title: 'Screen2',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-alert" />,
+          tabBarLabel: ({ focused }) => { return <View /> },
+          tabBarIcon: ({ focused }) => {
+            return <View style={{ width: 80, alignItems: "center" }}>
+              <TabBarIcon focused={focused} name="bars" />
+              <Text style={{ fontFamily: "Cairo_400Regular", color: focused ? Colors.BGreen : Colors.tabIconDefault }}>قائمة الاسعار</Text>
+            </View>
+          },
         }}
       />
       <BottomTab.Screen
         name="Sc3"
         component={Screen3}
         options={{
-          title: 'Screen3',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-warning" />,
+          tabBarLabel: ({ focused }) => { return <View /> },
+          tabBarIcon: ({ focused }) => {
+            return <View style={{ width: 80, alignItems: "center" }}>
+              <MaterialCommunityIcons
+                name="gold"
+                size={24}
+                color={focused ? Colors.BGreen : Colors.tabIconDefault}
+              />
+              <Text style={{ fontFamily: "Cairo_400Regular", color: focused ? Colors.BGreen : Colors.tabIconDefault }}>الذهب</Text>
+            </View>
+          },
+        }}
+      />
+      <BottomTab.Screen
+        name="Sc4"
+        component={Screen3}
+        options={{
+          tabBarLabel: ({ focused }) => { return <View /> },
+          tabBarIcon: ({ focused }) => {
+            return <View style={{ width: 80, alignItems: "center" }}>
+              <MaterialCommunityIcons
+                name="bitcoin"
+                size={24}
+                style={{ paddingTop: 5, paddingBottom: 2 }}
+                color={focused ? Colors.BGreen : Colors.tabIconDefault}
+              />
+              <Text style={{ fontFamily: "Cairo_400Regular", color: focused ? Colors.BGreen : Colors.tabIconDefault }}>ع. رقمية</Text>
+            </View>
+          },
+        }}
+      />
+      <BottomTab.Screen
+        name="Sc5"
+        component={Screen3}
+        options={{
+          tabBarLabel: ({ focused }) => { return <View /> },
+          tabBarIcon: ({ focused }) => {
+            return <View style={{ width: 80, alignItems: "center" }}>
+              <MaterialCommunityIcons
+                name="diamond"
+                size={24}
+                style={{ paddingTop: 5, paddingBottom: 2 }}
+                color={focused ? Colors.BGreen : Colors.tabIconDefault}
+              />
+              <Text style={{ fontFamily: "Cairo_400Regular", color: focused ? Colors.BGreen : Colors.tabIconDefault }}>المعادن</Text>
+            </View>
+          },
         }}
       />
     </BottomTab.Navigator>

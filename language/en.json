@@ -1,3 +1,7 @@
 {
-    "chln":"Change Language"
+    "chln": "Change Language",
+    "hello": "Hello",
+    "regular": "Montserrat_400Regular",
+    "bold": "Montserrat_700Bold",
+    "black": "Montserrat_900Black"
 }

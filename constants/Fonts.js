@@ -1,7 +1,9 @@
-import { I18nManager } from "react-native";
-
 export default {
-    regular: I18nManager.isRTL ? "Tajawal_400Regular" : "Montserrat_400Regular",
-    bold: I18nManager.isRTL ? "Tajawal_700Bold" : "Montserrat_700Bold",
-    black: I18nManager.isRTL ? "Tajawal_900Black" : "Montserrat_900Black",
+    regular_ar: "Tajawal_400Regular",
+    bold_ar: "Tajawal_700Bold",
+    black_ar: "Tajawal_900Black",
+
+    regular_en: "Montserrat_400Regular",
+    bold_en: "Montserrat_700Bold",
+    black_en: "Montserrat_900Black"
 };

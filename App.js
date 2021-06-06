@@ -13,6 +13,7 @@ import TabBarIcon from './components/TabBarIcon';
 import Screen3 from './screens/Screen3'
 import useLinking from './navigation/useLinking';
 import Colors from './constants/Colors';
+import Constants from 'expo-constants';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
@@ -289,5 +290,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    paddingTop: Constants.statusBarHeight,
   },
 });

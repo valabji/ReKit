@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import i18n from 'i18n-js';
 
 export default function CustomHeader({title, isHome, navigation}){
     return(

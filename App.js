@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Platform, StatusBar, StyleSheet, View, Text, Image, TouchableOpacity, Share } from 'react-native';
+import { Platform, StatusBar, StyleSheet, View, Text, Image, TouchableOpacity, Share, I18nManager } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 import { Feather, Ionicons } from '@expo/vector-icons';
@@ -28,6 +28,7 @@ import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
 import Fonts from './constants/Fonts';
 import { configureStore, createAction, createReducer } from '@reduxjs/toolkit';
+import { Restart } from 'fiction-expo-restart';
 
 const change = createAction('change')
 const changeReducer = createReducer({ "obj": { "x": "y", "ActiveS": true, "lang": "ar", "RandomNoti": 2342 } }, {
@@ -67,6 +68,16 @@ i18n.translations = {
 // i18n.locale = Localization.locale;
 i18n.locale = "ar";
 global.lang = "ar"
+I18nManager.forceRTL = true
+if (I18nManager.isRTL && i18n.locale == "ar") {
+  I18nManager.forceRTL = true
+  I18nManager.allowRTL = true
+  // Restart()
+}else{
+  I18nManager.forceRTL = false
+  I18nManager.allowRTL = false
+  // Restart()
+}
 
 console.log(i18n.locale)
 // When a value is missing from a language it'll fallback to another language with the key present.
@@ -113,13 +124,13 @@ export default function App(props) {
   } else {
     return (
       <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
-            <Stack.Navigator>
-              <Stack.Screen name="Root" component={BNav} options={{ title: "ReKit / Login", headerShown: false, headerStyle: { backgroundColor: "#ddd" } }} />
-              <Stack.Screen name="BotNav" component={DNav} options={{ title: "Main Screen", headerShown: false, headerStyle: { backgroundColor: "#ddd" } }} />
-            </Stack.Navigator>
-          </NavigationContainer>
+        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+        <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
+          <Stack.Navigator>
+            <Stack.Screen name="Root" component={BNav} options={{ title: "ReKit / Login", headerShown: false, headerStyle: { backgroundColor: "#ddd" } }} />
+            <Stack.Screen name="BotNav" component={DNav} options={{ title: "Main Screen", headerShown: false, headerStyle: { backgroundColor: "#ddd" } }} />
+          </Stack.Navigator>
+        </NavigationContainer>
       </View>
     );
   }

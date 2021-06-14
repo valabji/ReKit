@@ -2,3 +2,4 @@ node_modules
 .expo
 .vscode
 web-build
+yarn.lock

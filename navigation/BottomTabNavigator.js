@@ -37,8 +37,12 @@ export default function BottomTabNavigator({ navigation, route }) {
           tabBarLabel: ({ focused }) => { return <View /> },
           tabBarIcon: ({ focused }) => {
             return <View style={{ width: 80, alignItems: "center" }}>
-              <TabBarIcon focused={focused} name="sync" />
-              <Text style={{ fontFamily: "Cairo_400Regular", color: focused ? Colors.BGreen : Colors.tabIconDefault }}>المحول</Text>
+              <AntDesign
+                name="sync"
+                size={24}
+                color={focused ? Colors.DYellow : Colors.tabIconDefault}
+              />
+              <Text style={{ fontFamily: "Cairo_400Regular", color: focused ? Colors.DYellow : Colors.tabIconDefault }}>المحول</Text>
             </View>
           },
         }}
@@ -50,8 +54,12 @@ export default function BottomTabNavigator({ navigation, route }) {
           tabBarLabel: ({ focused }) => { return <View /> },
           tabBarIcon: ({ focused }) => {
             return <View style={{ width: 80, alignItems: "center" }}>
-              <TabBarIcon focused={focused} name="bars" />
-              <Text style={{ fontFamily: "Cairo_400Regular", color: focused ? Colors.BGreen : Colors.tabIconDefault }}>قائمة الاسعار</Text>
+              <AntDesign
+                name="bars"
+                size={24}
+                color={focused ? Colors.DYellow : Colors.tabIconDefault}
+              />
+              <Text style={{ fontFamily: "Cairo_400Regular", color: focused ? Colors.DYellow : Colors.tabIconDefault }}>قائمة الاسعار</Text>
             </View>
           },
         }}
@@ -66,9 +74,9 @@ export default function BottomTabNavigator({ navigation, route }) {
               <MaterialCommunityIcons
                 name="gold"
                 size={24}
-                color={focused ? Colors.BGreen : Colors.tabIconDefault}
+                color={focused ? Colors.DYellow : Colors.tabIconDefault}
               />
-              <Text style={{ fontFamily: "Cairo_400Regular", color: focused ? Colors.BGreen : Colors.tabIconDefault }}>الذهب</Text>
+              <Text style={{ fontFamily: "Cairo_400Regular", color: focused ? Colors.DYellow : Colors.tabIconDefault }}>الذهب</Text>
             </View>
           },
         }}
@@ -84,9 +92,9 @@ export default function BottomTabNavigator({ navigation, route }) {
                 name="bitcoin"
                 size={24}
                 style={{ paddingTop: 5, paddingBottom: 2 }}
-                color={focused ? Colors.BGreen : Colors.tabIconDefault}
+                color={focused ? Colors.DYellow : Colors.tabIconDefault}
               />
-              <Text style={{ fontFamily: "Cairo_400Regular", color: focused ? Colors.BGreen : Colors.tabIconDefault }}>ع. رقمية</Text>
+              <Text style={{ fontFamily: "Cairo_400Regular", color: focused ? Colors.DYellow : Colors.tabIconDefault }}>ع. رقمية</Text>
             </View>
           },
         }}
@@ -102,9 +110,9 @@ export default function BottomTabNavigator({ navigation, route }) {
                 name="diamond"
                 size={24}
                 style={{ paddingTop: 5, paddingBottom: 2 }}
-                color={focused ? Colors.BGreen : Colors.tabIconDefault}
+                color={focused ? Colors.DYellow : Colors.tabIconDefault}
               />
-              <Text style={{ fontFamily: "Cairo_400Regular", color: focused ? Colors.BGreen : Colors.tabIconDefault }}>المعادن</Text>
+              <Text style={{ fontFamily: "Cairo_400Regular", color: focused ? Colors.DYellow : Colors.tabIconDefault }}>المعادن</Text>
             </View>
           },
         }}

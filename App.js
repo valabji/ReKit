@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Platform, StatusBar, StyleSheet, View, Text, Image, TouchableOpacity, Share } from 'react-native';
+import { Platform, StatusBar, StyleSheet, View, Text, Image, TouchableOpacity, Share, I18nManager } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 import { Feather, Ionicons } from '@expo/vector-icons';
@@ -13,6 +13,7 @@ import TabBarIcon from './components/TabBarIcon';
 import Screen3 from './screens/Screen3'
 import useLinking from './navigation/useLinking';
 import Colors from './constants/Colors';
+import Constants from 'expo-constants';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
@@ -23,18 +24,62 @@ import {
 } from '@expo-google-fonts/tajawal';
 import { Cairo_400Regular, Cairo_700Bold, Cairo_900Black } from '@expo-google-fonts/cairo'
 import { Montserrat_400Regular, Montserrat_700Bold, Montserrat_900Black } from '@expo-google-fonts/montserrat';
-import Fonts from './constants/Fonts';
 import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
+import Fonts from './constants/Fonts';
+import { configureStore, createAction, createReducer } from '@reduxjs/toolkit';
+import { Restart } from 'fiction-expo-restart';
 
+const change = createAction('change')
+const changeReducer = createReducer({ "obj": { "x": "y", "ActiveS": true, "lang": "ar", "RandomNoti": 2342 } }, {
+  [change]: (state, action) => {
+    state.obj = action.obj
+    return state
+  },
+})
+export const mystore = configureStore({ reducer: changeReducer })
+/*
+mystore.dispatch({ type: 'change', "obj": { "lang": "ar" } })
+
+const [ft, setFt] = React.useState(true)
+const [Azkar, setAzkar] = React.useState(mystore.getState().obj.Azkar)
+
+
+const chaged = () => {
+    try {
+        setAzkar(mystore.getState().obj.Azkar)
+    } catch (e) {
+
+    }
+}
+
+if (ft) {
+    setFt(false)
+    mystore.subscribe(chaged)
+}
+*/
 const Stack = createStackNavigator();
 // Set the key-value pairs for the different languages you want to support.
 i18n.translations = {
-  en: { welcome: 'Hello', name: 'Charlie' },
-  ja: { welcome: 'こんにちは' },
+  en: require("./language/en.json"),
+  ar: require("./language/ar.json"),
 };
 // Set the locale once at the beginning of your app.
-i18n.locale = Localization.locale;
+// i18n.locale = Localization.locale;
+i18n.locale = "ar";
+global.lang = "ar"
+I18nManager.forceRTL = true
+if (I18nManager.isRTL && i18n.locale == "ar") {
+  I18nManager.forceRTL = true
+  I18nManager.allowRTL = true
+  // Restart()
+}else{
+  I18nManager.forceRTL = false
+  I18nManager.allowRTL = false
+  // Restart()
+}
+
+console.log(i18n.locale)
 // When a value is missing from a language it'll fallback to another language with the key present.
 i18n.fallbacks = true;
 
@@ -79,13 +124,13 @@ export default function App(props) {
   } else {
     return (
       <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
-            <Stack.Navigator>
-              <Stack.Screen name="Root" component={BNav} options={{ title: "ReKit / Login", headerShown: false, headerStyle: { backgroundColor: "#ddd" } }} />
-              <Stack.Screen name="BotNav" component={DNav} options={{ title: "Main Screen", headerShown: false, headerStyle: { backgroundColor: "#ddd" } }} />
-            </Stack.Navigator>
-          </NavigationContainer>
+        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+        <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
+          <Stack.Navigator>
+            <Stack.Screen name="Root" component={BNav} options={{ title: "ReKit / Login", headerShown: false, headerStyle: { backgroundColor: "#ddd" } }} />
+            <Stack.Screen name="BotNav" component={DNav} options={{ title: "Main Screen", headerShown: false, headerStyle: { backgroundColor: "#ddd" } }} />
+          </Stack.Navigator>
+        </NavigationContainer>
       </View>
     );
   }
@@ -128,8 +173,8 @@ function DNav() {
             color: Colors.BYellow,
             fontSize: 22,
             marginTop: 7,
-            fontFamily: Fonts.regular,
-          }}>{i18n.t('welcome')}</Text>
+            fontFamily: i18n.t('regular'),
+          }}>{i18n.t('hello')}</Text>
           <View style={{ flex: 1 }} />
           <Feather name="target" size={24} color={Colors.BYellow} style={{ marginTop: 17, marginLeft: 20 }} />
         </TouchableOpacity>
@@ -256,5 +301,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    paddingTop: Constants.statusBarHeight,
   },
 });

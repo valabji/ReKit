@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import i18n from 'i18n-js';
 
 export default function CustomHeader({title, isHome, navigation}){
     return(
@@ -30,7 +31,7 @@ export default function CustomHeader({title, isHome, navigation}){
           </View>
         }
         <View style={{flex:1.5,justifyContent:'center'}}>
-          <Text style={{textAlign:'center',fontWeight:500,fontSize:18}}>{title}</Text>
+          <Text style={{textAlign:'center',fontWeight:"500",fontSize:18}}>{title}</Text>
         </View>
         <View style={{flex:1}}></View>
       </View>

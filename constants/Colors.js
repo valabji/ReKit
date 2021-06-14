@@ -15,4 +15,8 @@ export default {
   DYellow:'#D1955E',
   BGreen:'#003C34',
   DGreen:'#002520',
+  WHITE: '#000',
+  BLACK: '#FFF',
+  BLUE: '#ddd',
+  PURPLE: '#FFF',
 };

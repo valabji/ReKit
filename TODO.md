@@ -17,3 +17,5 @@
     - scan the project for styles
     - rename styles
 11. List View Screen
+12. README.md add screen shots
+13. README.md add file structure

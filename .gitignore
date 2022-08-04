@@ -3,3 +3,4 @@ node_modules
 .vscode
 web-build
 yarn.lock
+.DS_Store

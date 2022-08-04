@@ -1,6 +1,9 @@
 {
     "chln": "Change Language",
     "hello": "Hello",
+    "app_name": "App Name",
+    "home": "Home",
+    "about": "About",
     "regular": "Montserrat_400Regular",
     "bold": "Montserrat_700Bold",
     "black": "Montserrat_900Black"

@@ -19,11 +19,11 @@
     "@material-ui/core": "^4.9.11",
     "@react-native-async-storage/async-storage": "^1.13.0",
     "@react-native-community/masked-view": "0.1.10",
-    "@react-navigation/bottom-tabs": "^5.11.11",
-    "@react-navigation/drawer": "^5.12.5",
-    "@react-navigation/native": "^5.0.0",
-    "@react-navigation/stack": "^5.14.5",
-    "@react-navigation/web": "~1.0.0-alpha.9",
+    "@react-navigation/bottom-tabs": "^6.3.2",
+    "@react-navigation/drawer": "^6.4.3",
+    "@react-navigation/native": "^6.0.11",
+    "@react-navigation/stack": "^6.2.2",
+    "@react-navigation/web": "^1.0.0-alpha.9",
     "@reduxjs/toolkit": "^1.5.1",
     "expo": "^41.0.0",
     "expo-app-loading": "^1.0.3",
@@ -45,13 +45,18 @@
     "react-native-reanimated": "~2.1.0",
     "react-native-safe-area-context": "3.2.0",
     "react-native-screens": "~3.0.0",
+    "react-native-svg": "12.1.0",
+    "react-native-toast-message": "^2.1.5",
     "react-native-web": "~0.13.12",
-    "react-redux": "^7.2.4"
+    "react-redux": "^7.2.4",
+    "sync-storage": "^0.4.2"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
+    "@types/react-native": "~0.63.2",
     "babel-preset-expo": "8.3.0",
-    "jest-expo": "^41.0.0"
+    "jest-expo": "^41.0.0",
+    "typescript": "~4.0.0"
   },
   "private": true
 }

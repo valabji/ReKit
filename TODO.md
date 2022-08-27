@@ -2,7 +2,7 @@
 
 1. Networking            [=>.............[10%]]
     - get method
-    - post method
+    - post method √
     - general method
 2. Login                 [===========>...[80%]]
 3. Dark Mode             [=>.............[08%]]
@@ -19,3 +19,6 @@
 11. List View Screen
 12. README.md add screen shots
 13. README.md add file structure
+14. Sample Inputs Screen
+    - Drop down
+    - File chooser

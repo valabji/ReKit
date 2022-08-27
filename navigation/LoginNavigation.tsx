@@ -6,7 +6,7 @@ import RegScreen from '../screens/Register'
 import TabBarIcon from '../components/TabBarIcon';
 
 const BottomNav = createBottomTabNavigator();
-export default function BNav() {
+export default function BNav():JSX.Element {
   return (
     <BottomNav.Navigator initialRouteName="Login">
       <BottomNav.Screen

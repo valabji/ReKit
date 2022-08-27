@@ -4,9 +4,9 @@ import { Feather, Ionicons } from '@expo/vector-icons'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import i18n from 'i18n-js'
 import Colors from '../constants/Colors'
-import { Card } from '@material-ui/core'
+// import { Card } from '@material-ui/core'
 import TextInput from './TextInput'
-
+import { Card } from 'react-native-paper'
 export default function CustomHeader({
   title,
   isHome = false,
@@ -87,12 +87,17 @@ export default function CustomHeader({
           flexDirection: 'row',
           justifyContent: 'center',
           padding: 10,
-          paddingRight:0,
+          paddingRight: 0,
         }}
       >
-        <View style={{flex:1}}>
-          <TextInput ref={inputRef} containerStyle={{height:44}} placeholder="Search..."
-          RightIcon={() => <Feather name="search" size={24} color={Colors.BLACK} />}
+        <View style={{ flex: 1 }}>
+          <TextInput
+            ref={inputRef}
+            containerStyle={{ height: 44 }}
+            placeholder="Search..."
+            RightIcon={() => (
+              <Feather name="search" size={24} color={Colors.BLACK} />
+            )}
           />
         </View>
         <TouchableOpacity

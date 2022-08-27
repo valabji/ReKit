@@ -12,7 +12,7 @@ import About from '../screens/About'
 import { mystore } from '../redux'
 
 const Drawer = createDrawerNavigator()
-export default function DNav() {
+export default function DNav(): JSX.Element {
   return (
     <Drawer.Navigator
       drawerType="slide"

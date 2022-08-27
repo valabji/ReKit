@@ -16,7 +16,7 @@ import {
 const BottomTab = createBottomTabNavigator()
 const INITIAL_ROUTE_NAME = 'Home'
 
-export default function BottomTabNavigator({ navigation, route }) {
+export default function BottomTabNavigator({ navigation, route }): JSX.Element {
   navigation.setOptions({ headerTitle: getHeaderTitle(route) })
 
   return (
@@ -38,7 +38,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         options={{
           headerShown: false,
           tabBarLabel: ({ focused }) => {
-            return <View />
+            return <View><Text></Text></View>
           },
           tabBarIcon: ({ focused }) => {
             return (
@@ -72,7 +72,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         options={{
           headerShown: false,
           tabBarLabel: ({ focused }) => {
-            return <View />
+            return <View><Text></Text></View>
           },
           tabBarIcon: ({ focused }) => {
             return (
@@ -101,7 +101,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         options={{
           headerShown: false,
           tabBarLabel: ({ focused }) => {
-            return <View />
+            return <View><Text></Text></View>
           },
           tabBarIcon: ({ focused }) => {
             return (
@@ -130,7 +130,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         options={{
           headerShown: false,
           tabBarLabel: ({ focused }) => {
-            return <View />
+            return <View><Text></Text></View>
           },
           tabBarIcon: ({ focused }) => {
             return (
@@ -160,7 +160,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         options={{
           headerShown: false,
           tabBarLabel: ({ focused }) => {
-            return <View />
+            return <View><Text></Text></View>
           },
           tabBarIcon: ({ focused }) => {
             return (

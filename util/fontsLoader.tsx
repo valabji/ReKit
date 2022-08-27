@@ -4,6 +4,7 @@ import {
   Tajawal_400Regular,
   Tajawal_700Bold,
   Tajawal_900Black,
+  useFonts,
 } from '@expo-google-fonts/tajawal'
 import {
   Cairo_400Regular,
@@ -27,6 +28,5 @@ export async function initializeFonts() {
     Montserrat_400Regular,
     Montserrat_700Bold,
     Montserrat_900Black,
-    'space-mono': require('../assets/fonts/SpaceMono-Regular.ttf'),
   })
 }

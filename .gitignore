@@ -4,3 +4,6 @@ node_modules
 web-build
 yarn.lock
 .DS_Store
+*.vtest.json
+*.vtest.txt
+*.vtest.js

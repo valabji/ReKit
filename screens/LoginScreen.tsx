@@ -19,7 +19,7 @@ import toast from '../util/toast'
 import styles, { SIZES } from '../constants/Style'
 import LoadingButton from '../components/LoadingButton'
 
-export default function Main({ navigation }) {
+export default function Main({ navigation }): JSX.Element {
   const [loading, setLoading] = useState(false)
   const [loading2, setLoading2] = useState(false)
   const [loading3, setLoading3] = useState(false)
@@ -28,11 +28,11 @@ export default function Main({ navigation }) {
   const [showPassword, setShowPassword] = useState(false)
 
   const handleLogin = async () => {
-    if(email==''){
+    if (email == '') {
       toast('Please enter email')
       return
     }
-    if(password==''){
+    if (password == '') {
       toast('Please enter password')
       return
     }

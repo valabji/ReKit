@@ -1,14 +1,15 @@
 import * as React from 'react'
-import { Platform, StatusBar, StyleSheet, View } from 'react-native'
-import * as SplashScreen from 'expo-splash-screen'
+import { StatusBar } from 'expo-status-bar'
+import { Platform, StyleSheet, View } from 'react-native'
+// import * as SplashScreen from 'expo-splash-screen'
 import { NavigationContainer } from '@react-navigation/native'
 import Constants from 'expo-constants'
 import MainNavigation from './navigation/MainNavigation'
 import { initializeTranslationEngine } from './language/engine'
 import { initializeFonts } from './util/fontsLoader'
-import Toast from 'react-native-toast-message';
+import Toast from 'react-native-toast-message'
 
-export default function App(props) {
+export default function App(): JSX.Element {
   const [isLoadingComplete, setLoadingComplete] = React.useState(false)
   const [initialNavigationState, setInitialNavigationState] = React.useState()
   const containerRef = React.useRef()
@@ -16,19 +17,19 @@ export default function App(props) {
   React.useEffect(() => {
     async function loadResourcesAndDataAsync() {
       try {
-        SplashScreen.preventAutoHideAsync()
+        // SplashScreen.preventAutoHideAsync()
         await initializeFonts()
         await initializeTranslationEngine()
       } catch (e) {
         console.warn(e)
       } finally {
         setLoadingComplete(true)
-        SplashScreen.hideAsync()
+        // SplashScreen.hideAsync()
       }
     }
     loadResourcesAndDataAsync()
   }, [])
-  if (!isLoadingComplete && !props.skipLoadingScreen) {
+  if (!isLoadingComplete) {
     return null
   } else {
     return (

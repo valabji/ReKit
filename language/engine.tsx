@@ -1,8 +1,19 @@
-import AsyncStorage from "@react-native-async-storage/async-storage"
-import { mystore } from "../redux"
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { mystore } from '../redux'
 import i18n from 'i18n-js'
-import { I18nManager } from "react-native"
-import { Restart } from 'fiction-expo-restart'
+import { I18nManager,Platform } from 'react-native'
+// import { Restart } from 'fiction-expo-restart'
+// import * as Updates from 'expo-updates';
+
+const Restart = ()=>{
+    if(Platform.OS=="web")
+    {
+        window.location.reload()
+    }
+    else{
+        // Updates.reloadAsync();
+    }
+}
 
 const changed = (restart: boolean = true) => {
   i18n.locale = mystore.getState().obj.lang
@@ -26,6 +37,10 @@ i18n.translations = {
   ar: require('./ar.json'),
 }
 i18n.fallbacks = true
+
+export function t(key: string, options: any = {}): string {
+  return i18n.t(key, options)
+}
 
 export async function initializeTranslationEngine() {
   await AsyncStorage.getItem('lang').then((lang) => {
